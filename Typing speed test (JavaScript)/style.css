@@ -1,0 +1,134 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;800&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Noto Sans", sans-serif;
+}
+
+body {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: url("https://source.unsplash.com/1600x900/?keyboard");
+  background-size: cover;
+  background-position: center;
+}
+
+.container {
+  max-width: 550px;
+  text-align: center;
+}
+
+.timer {
+  font-size: 28px;
+  font-weight: bold;
+  width: 200px;
+  display: flex;
+  gap: 10px;
+  background: #6ec7ff;
+  color: rgb(0, 0, 0);
+}
+
+#text {
+  z-index: -34;
+  position: absolute;
+  opacity: 0;
+}
+
+.words-container {
+  padding: 15px;
+  background: #d5eeee;
+  box-shadow: 5px 5px 5px black;
+  border: 6px solid #85d1ff;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.words {
+  animation: swing 0.9s ease-in-out;
+  position: relative;
+}
+@keyframes swing {
+  0% {
+    left: 500px;
+  }
+  50% {
+    left: -300px;
+    opacity: 0.5;
+  }
+  75% {
+    left: 200px;
+  }
+  100% {
+    left: 0px;
+    opacity: 1;
+  }
+}
+
+.content {
+  padding: 30px 0px;
+  text-align: center;
+}
+
+li {
+  list-style: none;
+  display: flex;
+  gap: 7px;
+  background: #cce6e6;
+  padding: 5px 10px;
+  border-radius: 21px;
+  box-shadow: 5px 5px 5px rgb(4, 61, 136);
+  font-size: 20px;
+}
+
+.result-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+button {
+  position: relative;
+  top: 35px;
+  font-family: "Noto Sans", sans-serif;
+  font-weight: bolder;
+  padding: 10px 36px;
+  border: none;
+  background: #5e95ff;
+  font-size: 25px;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px #00e7ff;
+  color: white;
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+}
+
+button:active {
+  background-color: black;
+}
+
+/* For Javascript */
+.correct {
+  background-color: rgb(147, 213, 229, 0.7);
+  border-radius: 5px;
+  color: blue;
+  animation: blink 0.4s infinite;
+}
+
+.incorrect {
+  background-color: rgba(245, 11, 11, 0.34);
+  border-radius: 5px;
+  color: red;
+  animation: blink 0.4s infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
